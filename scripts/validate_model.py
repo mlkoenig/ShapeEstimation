@@ -4,7 +4,6 @@ import pyvista as pv
 
 from shapest.data import DataModule, target_transform
 from shapest.inference import load_model
-import matplotlib.pyplot as plt
 
 ckpt = list(Path("lightning_logs/version_3").rglob("*.ckpt"))[0]
 

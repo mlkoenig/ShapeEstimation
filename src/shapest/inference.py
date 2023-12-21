@@ -4,8 +4,8 @@ from typing import Any
 
 import pyvista as pv
 
-from .data import transform, inv_transform
-from .models import CaesarModel, ShapeModel, Encoder
+from .data import inv_transform
+from .models import CaesarModel, Encoder, ShapeModel
 
 
 class InferenceModel:
@@ -34,5 +34,7 @@ class InferenceModel:
 
 def load_model(checkpoint: Path, caesar_path: Path, device=None) -> InferenceModel:
     caesar = CaesarModel(caesar_path)
-    model = ShapeModel.load_from_checkpoint(str(checkpoint), device=device, model=Encoder(), inv_transform=inv_transform)
+    model = ShapeModel.load_from_checkpoint(
+        str(checkpoint), device=device, model=Encoder(), inv_transform=inv_transform
+    )
     return InferenceModel(caesar, model)

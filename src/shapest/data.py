@@ -202,7 +202,4 @@ class DataModule(LightningDataModule):
         )
 
     def test_dataloader(self) -> EVAL_DATALOADERS:
-        return DataLoader(
-            self.test_dataset,
-            self.batch_size
-        )
+        return DataLoader(self.test_dataset, self.batch_size)
