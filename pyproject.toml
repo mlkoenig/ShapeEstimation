@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "shapest"
+dynamic = ["version"]
+description = "Computer vision models to estimate 3D human shapes from images."
+license = "BSD-2-Clause"
+requires-python = ">=3.6"
+authors = [
+    { name = "Marcel König", email = "contact@marcelkoenig.dev" },
+]
+keywords = [
+    "shapes",
+    "estimation",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    "numpy",
+    "torch",
+    "lightning",
+    "pyvista",
+    "scipy",
+    "pandas",
+    "tqdm",
+    "torchvision",
+    "scikit-learn",
+    "click",
+    "meshio",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "flake8",
+    "black",
+    "isort"
+]
+
+[project.urls]
+Homepage = "https://github.com/mkoenig-dev/ShapeEstimation"
+
+[tool.hatch.version]
+path = "src/shapest/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src/shapest",
+    "/tests"
+]
+
+[tool.hatch.envs.default]
+features = [
+    "dev"
+]
