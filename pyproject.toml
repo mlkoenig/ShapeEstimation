@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "shapest"
 dynamic = ["version"]
-description = "Computer vision models to estimate 3D human shapes from images."
+description = "Estimate 3D human shapes from images."
 license = "BSD-2-Clause"
 requires-python = ">=3.6"
 authors = [
