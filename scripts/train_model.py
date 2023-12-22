@@ -1,22 +1,25 @@
+"""
+Train a CNN to estimate the coefficients of the PCA eigen vectors.
+"""
+
 from pathlib import Path
 
 from lightning.pytorch import Trainer
 
-from shapest.data import DataModule, inv_transform, target_transform
-from shapest.models import Encoder, ShapeModel
+from shapest import DataModule, ShapeModel
+from shapest.models import Encoder
 
 if __name__ == "__main__":
-    data_path = Path(__file__).parents[1].resolve() / "datasets"
+    root = Path(__file__).parents[1].resolve()
     datamodule = DataModule(
-        data_path,
-        transform=None,
-        target_transform=target_transform,
+        root / "datasets",
+        root / "caesar-norm-wsx",
         batch_size=128,
         num_workers=4,
     )
 
-    model = ShapeModel(Encoder(), inv_transform)
-    trainer = Trainer(max_epochs=2, enable_checkpointing=True, precision="32")
+    model = ShapeModel(Encoder())
+    trainer = Trainer(max_epochs=20, enable_checkpointing=True, precision="32")
 
     trainer.fit(model, datamodule=datamodule)
     trainer.test(model, datamodule=datamodule)
