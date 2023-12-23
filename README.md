@@ -23,7 +23,7 @@ pip install -e .
 
 A `CAESAR` dataset needs to be provided in order to create the training and test data.
 
-:warning: **By downloading and using the human shape spaces, you agree to the following license** (see [bsd.txt](https://humanshape.mpi-inf.mpg.de/bsd.txt)):
+:warning: **The human shape spaces are available with respect to the following license** (see [bsd.txt](https://humanshape.mpi-inf.mpg.de/bsd.txt)):
 
 ```
 MPII Human Shape, Version 1.0
