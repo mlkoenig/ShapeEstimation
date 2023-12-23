@@ -64,4 +64,5 @@ the ground truth test samples and the model estimations:
 ```bash
 python scripts/test_model.py <checkpoint_file> <caesar_dataset>
 ```
+![sample](https://github.com/mkoenig-dev/ShapeEstimation/assets/51786860/64974a5b-5197-491e-84cf-b281744e4618)
 <img width="505" alt="Bildschirmfoto 2023-12-22 um 15 17 06" src="https://github.com/mkoenig-dev/ShapeEstimation/assets/51786860/8b6469f3-5456-4187-a0c2-2072c75342ff">
